@@ -1,0 +1,123 @@
+.spinner {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.spinner .dot {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.spinner .dot::before {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 15%;
+  height: 15%;
+  background-color: #FFF;
+  border-radius: 100%;
+  animation: circle-fade 1.2s infinite ease-in-out both;
+}
+
+.spinner.dark .dot::before {
+  background-color: var(--bg-color-gray);
+}
+
+.spinner .dot.two {
+  transform: rotate(30deg);
+}
+
+.spinner .dot.three {
+  transform: rotate(60deg);
+}
+
+.spinner .dot.four {
+  transform: rotate(90deg);
+}
+
+.spinner .dot.five {
+  transform: rotate(120deg);
+}
+
+.spinner .dot.six {
+  transform: rotate(150deg);
+}
+
+.spinner .dot.seven {
+  transform: rotate(180deg);
+}
+
+.spinner .dot.eight {
+  transform: rotate(210deg);
+}
+
+.spinner .dot.nine {
+  transform: rotate(240deg);
+}
+
+.spinner .dot.ten {
+  transform: rotate(270deg);
+}
+
+.spinner .dot.eleven {
+  transform: rotate(300deg);
+}
+
+.spinner .dot.twelve {
+  transform: rotate(330deg);
+}
+
+.spinner .dot.two::before {
+  animation-delay: -1.1s;
+}
+
+.spinner .dot.three::before {
+  animation-delay: -1s;
+}
+
+.spinner .dot.four::before {
+  animation-delay: -0.9s;
+}
+
+.spinner .dot.five::before {
+  animation-delay: -0.8s;
+}
+
+.spinner .dot.six::before {
+  animation-delay: -0.7s;
+}
+
+.spinner .dot.seven::before {
+  animation-delay: -0.6s;
+}
+
+.spinner .dot.eight::before {
+  animation-delay: -0.5s;
+}
+
+.spinner .dot.nine::before {
+  animation-delay: -0.4s;
+}
+
+.spinner .dot.ten::before {
+  animation-delay: -0.3s;
+}
+
+.spinner .dot.eleven::before {
+  animation-delay: -0.2s;
+}
+
+.spinner .dot.twelve::before {
+  animation-delay: -0.1s;
+}
+
+@keyframes circle-fade {
+  0%,
+  39%,
+  100% { opacity: 0; }
+  40% { opacity: 1; }
+}

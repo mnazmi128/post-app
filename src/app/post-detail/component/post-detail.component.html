@@ -1,0 +1,20 @@
+<div class="post-detail">
+  <div class="loading-screen" [ngClass]="{ loading: isLoading }">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
+  <div *ngIf="post">
+    <h1 class="title">{{ post.title }}</h1>
+    <p class="content"> {{ post.body }}</p>
+  </div>
+  <div class="comments" *ngIf="comments">
+    <h5>Comments</h5>
+    <form class="search-form" [formGroup]="searchForm" (ngSubmit)="search(searchForm.value)">
+      <input class="form-control" type="search" placeholder="search" formControlName="searchValue" (search)="clearSearch()"/>
+      <select class="form-select" formControlName="searchOption">
+        <option *ngFor="let option of searchOptions" [value]="option.value">{{ option.name }}</option>
+      </select>
+      <button type="submit" class="btn btn-secondary">Search</button>
+    </form>
+    <app-comment *ngFor="let comment of commentsToDisplay" [comment]="comment"></app-comment>
+  </div>
+</div>
